@@ -92,5 +92,5 @@ app.put('/api/products/:item', function(req,res){
 })
 
 app.listen( 8080 , function(){
-    console.log("Server BBG");
+    console.log("Products Server");
 })
