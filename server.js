@@ -57,6 +57,17 @@ app.get('/api/products', function(req, res){
     })
 })
 
+app.get('/api/products/:item', function(req, res){
+    Products.findOne({
+        _id: req.params.item
+    }, function(error,products){
+        if(error){
+            res.send(error);
+        }
+        res.json(products);
+    })
+})
+
 app.delete('/api/products/:item',function(req, res){
     Products.remove({
         _id: req.params.item
@@ -92,5 +103,5 @@ app.put('/api/products/:item', function(req,res){
 })
 
 app.listen( 8080 , function(){
-    console.log("Server BBG");
+    console.log("Products Server");
 })
